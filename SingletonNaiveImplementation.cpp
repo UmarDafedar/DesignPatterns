@@ -63,7 +63,8 @@ class Singleton
    counter++;
   }
   
-  //Copy constructor and Copy Assignment operator is deleted to avoid multiple object creation
+  // Copy constructor and Copy Assignment operator is deleted to avoid multiple object creation
+  // Singleton should not be cloneable and should not be assignable
   Singleton(const Singleton& other)=delete;
   Singleton& operator=(const Singleton& other)=delete;
   
