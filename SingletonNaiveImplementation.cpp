@@ -18,6 +18,7 @@ How to implement
     The method should always return that instance on all subsequent calls.
 4. Make the constructor of the class private. The static method of the class will still be able to call the constructor, but not the other objects.
 5. Go over the client code and replace all direct calls to the singleton’s constructor with calls to its static creation method.
+6. Copy Constructor is deleted
 
 Pro's
 -----
@@ -33,6 +34,17 @@ Con's
 4. It may be difficult to unit test the client code of the Singleton because many test frameworks rely on inheritance when producing mock objects.
     Since the constructor of the singleton class is private and overriding static methods is impossible in most languages, 
     you will need to think of a creative way to mock the singleton. Or just don’t write the tests. Or don’t use the Singleton pattern.
+
+Applicability
+-------------
+1. Use the Singleton pattern when a class in your program should have just a single instance available to all clients; for example, 
+    a single database object shared by different parts of the program.
+    The Singleton pattern disables all other means of creating objects of a class except for the special creation method. 
+    This method either creates a new object or returns an existing one if it has already been created.
+
+ 2. Use the Singleton pattern when you need stricter control over global variables.
+    Unlike global variables, the Singleton pattern guarantees that there’s just one instance of a class. 
+    Nothing, except for the Singleton class itself, can replace the cached instance.
 */
 
 #include<iostream>
